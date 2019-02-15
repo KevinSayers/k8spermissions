@@ -1,5 +1,10 @@
 # k8spermissions
 
+Simple pods for testing user permissions in Kubernetes.
+
+
+Outstanding issues:
+* runAsGroup still results in a file group ownership as root
 
 ```yaml
 apiVersion: v1
@@ -29,3 +34,4 @@ spec:  # specification of the pod's contents
     runAsUser: 5000
     fsGroup: 5000
 ```
+

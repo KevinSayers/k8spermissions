@@ -12,7 +12,7 @@ spec:  # specification of the pod's contents
   - name: hello
     image: "ubuntu:14.04"
     command: ["/bin/bash"]
-    args: ["-c","echo hello world > /data/kevin2/myoutput.txt"]
+    args: ["-c","echo hello world again > /data/kevin2/myoutput.txt"]
     volumeMounts:
     - mountPath: "/data"
       name: mystorage 

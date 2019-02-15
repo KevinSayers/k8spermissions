@@ -5,9 +5,9 @@ metadata:
 spec:  # specification of the pod's contents
   restartPolicy: Never
   volumes: 
-    - name: mystorage
-      persistentVolumeClaim:
-        claimName: nfs-ks-pvc
+  - name: mystorage
+    persistentVolumeClaim:
+      claimName: nfs-ks-pvc
   containers:
   - name: hello
     image: "ubuntu:14.04"

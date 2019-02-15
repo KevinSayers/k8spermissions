@@ -16,6 +16,6 @@ spec:  # specification of the pod's contents
     volumeMounts:
     - mountPath: "/data"
       name: mystorage 
-    securityContext:
-      runAsUser: 76862
-      runAsGroup: 7610
+  securityContext:
+    runAsUser: 76862
+    runAsGroup: 7610

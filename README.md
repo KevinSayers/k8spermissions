@@ -1,1 +1,31 @@
 # k8spermissions
+
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-user
+spec:  # specification of the pod's contents
+  restartPolicy: Never
+  volumes: 
+  - name: mystorage
+    persistentVolumeClaim:
+      claimName: nfs
+  containers:
+  - name: hello
+    image: "ubuntu:14.04"
+    command: ["/bin/bash"]
+    args: ["-c","echo hello world again > /data/kevinowned/useroutput.txt"]
+    volumeMounts:
+    - mountPath: "/data"
+      name: mystorage 
+    securityContext:
+      runAsUser: 5000
+      runAsGroup: 5000
+      allowPrivilegeEscalation: false
+      
+  securityContext:
+    runAsUser: 5000
+    fsGroup: 5000
+```

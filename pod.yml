@@ -4,7 +4,14 @@ metadata:
   name: hello-world
 spec:  # specification of the pod's contents
   restartPolicy: Never
+  volumes: 
+    - name: mystorage
+      persistentVolumeClaim:
+        claimName: nfs-ks-pvc
   containers:
   - name: hello
     image: "ubuntu:14.04"
     command: ["/bin/echo", "hello", "world"]
+  volumesMounts:
+  - mountPath: "/data/kevin2"
+    name: mystorage 

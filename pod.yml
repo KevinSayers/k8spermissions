@@ -7,12 +7,12 @@ spec:  # specification of the pod's contents
   volumes: 
   - name: mystorage
     persistentVolumeClaim:
-      claimName: nfs-ks-pvc
+      claimName: nfs
   containers:
   - name: hello
     image: "ubuntu:14.04"
     command: ["/bin/bash"]
-    args: ["-c","echo hello world again > /data/kevin2/myoutput.txt"]
+    args: ["-c","echo hello world again > /data/kevin/rootoutput.txt"]
     volumeMounts:
     - mountPath: "/data"
       name: mystorage 

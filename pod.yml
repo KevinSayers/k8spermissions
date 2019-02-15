@@ -11,7 +11,7 @@ spec:  # specification of the pod's contents
   containers:
   - name: hello
     image: "ubuntu:14.04"
-    command: ["/bin/echo", "hello", "world",">","myoutput.txt"]
+    command: ["/bin/echo", "hello", "world",">","/data/kevin2/myoutput.txt"]
     volumeMounts:
     - mountPath: "/data/kevin2"
       name: mystorage 
